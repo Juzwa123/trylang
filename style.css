@@ -1,0 +1,92 @@
+body{
+    font-family:"Segoe UI", Arial;
+    margin:0;
+    background:#f2f4f7;
+}
+
+header{
+    background:#1f3a5f;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+input{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    padding:6px 12px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-right:5px;
+}
+
+.primary{
+    background:#1f3a5f;
+    color:white;
+}
+
+.primary:hover{
+    background:#162b47;
+}
+
+.record-card{
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:20px;
+    background:#fafafa;
+}
+
+.record-title{
+    font-weight:bold;
+    margin-bottom:10px;
+    color:#1f3a5f;
+}
+
+.record-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+}
+
+.delete-btn{
+    background:#d9534f;
+    color:white;
+}
+
+.delete-btn:hover{
+    background:#c9302c;
+}
+
+.export-btn{
+    background:#28a745;
+    color:white;
+}
+
+.export-btn:hover{
+    background:#218838;
+}

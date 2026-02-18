@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Tax Record System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Business Tax Record System</h1>
+    <p>RELIEF Purchase Summary Ready</p>
+</header>
+
+<div class="container">
+
+<h2>Enter Purchase Record</h2>
+
+<div class="form-grid">
+
+<input id="businessName" placeholder="Your Business Name">
+<input id="businessTIN" placeholder="Your Business TIN (9 digits)">
+
+<input id="soldTo" placeholder="Supplier Registered Name">
+<input id="clientTIN" placeholder="Supplier TIN (9 digits)">
+
+<input id="address1" placeholder="Address Line 1">
+<input id="address2" placeholder="Address Line 2">
+
+<input id="invoiceNo" placeholder="Invoice Number">
+<input id="invoiceDate" type="date">
+
+<input id="qty" type="number" placeholder="Quantity" oninput="autoCompute()">
+<input id="unitPrice" type="number" placeholder="Unit Price" oninput="autoCompute()">
+
+<input id="amount" placeholder="Amount" readonly>
+
+<input id="vatRate" value="12" placeholder="VAT Rate %" oninput="autoCompute()">
+<input id="lessVAT" placeholder="Input VAT" readonly>
+<input id="netVAT" placeholder="Net of VAT" readonly>
+<input id="totalSales" placeholder="Total Purchases" readonly>
+
+</div>
+
+<div class="buttons">
+<button class="primary" onclick="saveData()">Save Record</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function autoCompute(){
+    let qty = Number(document.getElementById("qty").value || 0);
+    let price = Number(document.getElementById("unitPrice").value || 0);
+    let vatRate = Number(document.getElementById("vatRate").value || 12);
+
+    let amount = qty * price;
+    let vat = amount * vatRate / 100;
+    let net = amount - vat;
+
+    document.getElementById("amount").value = amount.toFixed(2);
+    document.getElementById("lessVAT").value = vat.toFixed(2);
+    document.getElementById("netVAT").value = net.toFixed(2);
+    document.getElementById("totalSales").value = amount.toFixed(2);
+}
+</script>
+
+</body>
+</html>
